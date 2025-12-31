@@ -15,12 +15,12 @@ jobs:
       - name: Install Fyne Toolkit
         run: go install fyne.io/tools/cmd/fyne@latest
 
-      - name: Build ULTRA Release APK
+      - name: Build Clean Release APK
         run: |
           export PATH=$PATH:$(go env GOPATH)/bin
           export CGO_ENABLED=1
-          fyne package -os android -id com.nanklis.rkn.sim -icon icon.png -app-version 1.0.3 -app-build 4 -release -tags release
-      
+          fyne package -os android -id com.nanklis.rkn.sim -icon icon.png -app-version 1.0.4 -app-build 5 -release -tags release
+
       - name: Upload Finished APK
         uses: actions/upload-artifact@v4
         with:
