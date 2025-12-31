@@ -18,7 +18,7 @@ jobs:
       - name: Build Release APK
         run: |
           export PATH=$PATH:$(go env GOPATH)/bin
-          fyne package -os android -id com.nanklis.rkn.sim -icon icon.png -app-version 1.0.1 -app-build 2 -release
+          fyne package -os android -id com.nanklis.rkn.sim -icon icon.png -app-version 1.0.2 -app-build 3 -release
 
       - name: Upload Finished APK
         uses: actions/upload-artifact@v4
