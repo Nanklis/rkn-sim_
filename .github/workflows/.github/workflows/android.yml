@@ -4,18 +4,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-go@v4
+      - uses: actions/checkout@v4
+      - name: Set up Go
+        uses: actions/setup-go@v4
         with:
           go-version: '1.21'
       - name: Install Fyne
         run: go install fyne.io/fyne/v2/cmd/fyne@latest
-      - name: Package
+      - name: Build APK
         run: |
           export PATH=$PATH:$(go env GOPATH)/bin
           fyne package -os android -id com.nanklis.rkn.sim -icon icon.png -release
-      - name: Upload APK
-        uses: actions/upload-artifact@v3
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
         with:
-          name: app-release
+          name: my-app-release
           path: "*.apk"
