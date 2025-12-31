@@ -1,0 +1,8 @@
+[Details]
+	ID = "com.nanklis.rkn.pro.v15"
+	Name = "RKN_PRO"
+	Version = "15.0.0"
+	Build = 150
+
+[Development]
+	Release = true
